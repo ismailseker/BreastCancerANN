@@ -36,6 +36,12 @@ xTest_std = scaler.transform(xTest)
 
 import tensorflow as tf
 tf.random.set_seed(3)
-from tensorflow import keras
+from keras import layers, models
 print(tf.random.uniform([3]))
+
+model = models.Sequential([
+                          layers.Flatten(input_shape=(30,)),
+                          layers.Dense(20, activation='relu'),
+                          layers.Dense(2, activation='sigmoid')
+])
 
